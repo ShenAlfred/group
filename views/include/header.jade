@@ -1,0 +1,25 @@
+.header
+    .main.clearfix
+        .logo.fl
+            a(href="/")
+                img(src="/images/logo.png" alt="ShangYing Group")
+        .fr
+            #common-nav.common-nav.fl
+                ul.clearfix.common-navul
+                    each nav, index in navigationBar
+                        li
+                            if nav.outLink
+                                a.nav-index(href="#{nav.url}" target="_blank" rel="nofollow") #{nav.name}
+                            else
+                                a.nav-index(href="#{nav.url}" ) #{nav.name}
+                            div.list-group
+                                each child in nav.barResList
+                                    .list-item
+                                        if child.outLink
+                                            a.at(href="#{child.url}" target="_blank" rel="nofollow") #{child.name}
+                                        else
+                                            a.at(href="#{child.url}" ) #{child.name}
+            .version-change.fl
+                a(href="/") 中文
+                span &nbsp;|&nbsp;
+                a.active(href="/en") English

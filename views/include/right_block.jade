@@ -1,0 +1,45 @@
+.commontabContent.fl.clearfix
+    .detail-img
+        h1.detail-text #{navigationBar[activeIndex].barResList[activeIndex_two].name}
+        img.imghead(src="#{navigationBar[activeIndex].barResList[activeIndex_two].picUrl}" alt="#{navigationBar[activeIndex].barResList[activeIndex_two].title}")
+    .about-detail
+        .detail-artical
+            case wherePage
+                when 'about'
+                    include ../about/about_content
+                when 'about-architecture'
+                    include ../about/architecture_content
+                when 'about-team'
+                    include ../about/team_content
+                when 'about-event'
+                    include ../about/event_content
+                when 'about-aptitude'
+                    include ../about/aptitude_content
+                when 'event-detail'
+                    include ../detail/event_detail
+                when 'about-concat'
+                    include ../about/concat_content
+                when 'property-finacial'
+                    include ../property/finacial_content
+                when 'property-banking'
+                    include ../property/banking_content
+                when 'property-syonline'
+                    include ../property/syonline_content
+                when 'news-media'
+                    include ../news/media_content
+                when 'news-trends'
+                    include ../news/trends_content
+                when 'news-video'
+                    include ../news/video_content
+                when 'media-detail'
+                    include ../detail/media_detail
+                when 'trends-detail'
+                    include ../detail/trends_detail
+                when 'video-detail'
+                    include ../detail/video_detail
+                when 'culture'
+                    include ../culture/culture_content
+                when 'culture-staff'
+                    include ../culture/staff_content
+                when 'staff-detail'
+                    include ../detail/staff_detail

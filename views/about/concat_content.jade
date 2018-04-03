@@ -1,0 +1,21 @@
+.about-concat
+    .concat-all.clearfix
+        .concat-text.fl
+            .concat-content.ac.fl
+                h2.concat-title.at #{content.name}
+                div
+                    div Address: #{content.address}
+                    div TEL: #{content.telephone}
+                    div FAX: #{content.fax}
+                    div Brand cooperation media: #{content.email}
+        .concat-map.fr(style="height:184px")
+            iframe(src="/symap?h=#{mapHeight}&w=#{mapWidth}&mapPoint=#{content.mapPoint}" height="100%" scrolling="no" style="background-color: transparent;" marginwidth="0" marginheight="0" frameborder="0")
+    .map-detail
+        ul.clearfix
+            each company in content.companyList
+                li.company_box
+                    img(src="#{company.picUrl}" alt="#{company.shortName}" style="width: 220px;height: 154px")
+                    .refer
+                        span.at #{company.shortName}
+                        br
+                        span.ac.b More

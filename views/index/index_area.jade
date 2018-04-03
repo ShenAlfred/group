@@ -1,0 +1,54 @@
+.index-detail
+    .index-detail-wrap.main
+        ul.clearfix
+            li.about
+                .title
+                    h1.sdl.active
+                        a(href="#{aboutLink}") About
+                div.p
+                    a(href="/#{aboutLink}").aboutcontent !{aboutText}
+                div.more
+                    a(href="/#{aboutLink}") More
+            li.product
+                .title
+                    h2.sdl.active
+                        a(href="/#{industriesLink}") Business
+                .product-concat
+                    each industries in industriesList
+                        .product-detail
+                            a(href="/#{industries.url}")
+                                img(src="#{industries.picUrl}" alt="#{industries.title}")
+                                span.text #{industries.title}
+                                a.arrow
+            li.condition
+                #tabHeader.tabHeader
+                    .tabTitle.sfg
+                        h2.sdl
+                            a Video
+                        h2.sdl
+                            a Media report
+                #tabDetail.tabDetail
+                    .tabState
+                        div
+                            #standard_video Loading the player...
+                            input#videosUrl(type="hidden" value="#{video.videosUrl}")
+                            input#coverPhotoUrl(type="hidden" value="#{video.coverPhotoUrl}")
+                            p.over #{video.title}
+                        p.more
+                            a(href="#{video.url}") More
+                    .tabState
+                        img(src="#{news.picUrl}" alt="媒体报道" width="318" height="73")
+                        .article
+                            each brief in news.briefList
+                                if brief.newsSources == ""
+                                    div
+                                        a.news_detail_link(href="/news/media/#{brief.id}")
+                                            p.over #{brief.title}
+                                else
+                                    div.clearfix
+                                        p#news_details_source.fl [#{brief.newsSources}]
+                                        a.fl.news_details_link(href="/news/media/#{brief.id}")
+                                            p.news_details.over #{brief.title}
+                        p.more
+                            a(href="#{news.url}") 查看更多
+

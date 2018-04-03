@@ -1,0 +1,18 @@
+.about-detail.staff1.staffdetail
+    .line
+    .staff-img
+        .staff-title
+            h4.acontent #{content.data.name}
+        .staff-container
+            ul.staff-slide.clearfix
+                each img in content.data.picUrlList
+                    li
+                        img(src="#{img}" alt="#{content.data.name}")
+.swiper-mask
+    .swiper-box
+        .swiper-box-close
+        #staff-swiper.swiper-container
+            .swiper-wrapper
+        .swiper-button-prev
+        .swiper-button-next
+include ../include/page
